@@ -71,17 +71,6 @@ def load_data():
 	
 	
 
-def turn2D_2_3D(imgset):
-	n, _, _ = imgset.shape
-	h = 32; w = 32
-	imgset3D = np.zeros((n, h, w, 3), dtype = np.uint8)
-
-	for i in range(n):
-		img = cv2.cvtColor(imgset[i], cv2.COLOR_GRAY2RGB)
-		imgset3D[i] = cv2.resize(img, (w, h))
-
-	return imgset3D
-
 
 
 x_train, y_train, x_test, y_test = load_data()
